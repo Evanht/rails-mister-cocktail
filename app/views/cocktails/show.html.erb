@@ -1,0 +1,28 @@
+<h1><%= @cocktail.name %></h1>
+
+
+<p>
+  <strong>Ingredients:</strong>
+  <ul>
+  <% @cocktail.doses.each do |dose| %>
+    <li><%= dose.description %> of <%= dose.ingredient.name %></li>
+    <% end %>
+  </ul>
+</p>
+
+<!--
+if @cocktail.id == dose.cocktail_id
+  all_descriptions << dose.description
+end
+
+
+ingredient.doses.each do |dose|
+if dose.cocktail_id == @cocktail.id
+ ids << dose
+ end
+ end -->
+
+
+
+<%= link_to "All Cocktails", root_path(@cocktail) %>
+<%= link_to "Add Dose", new_cocktail_dose_path(@cocktail) %>
